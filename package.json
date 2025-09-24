@@ -41,6 +41,7 @@
     "husky": "^9.1.7",
     "jiti": "^2.6.0",
     "less": "^4.4.1",
+    "mockjs": "^1.1.0",
     "postcss-html": "^1.8.0",
     "postcss-less": "^6.0.0",
     "prettier": "^3.6.2",
@@ -54,6 +55,7 @@
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.1",
     "vite": "^7.1.6",
+    "vite-plugin-mock": "^3.0.2",
     "vue-tsc": "^3.0.7"
   },
   "lint-staged": {
