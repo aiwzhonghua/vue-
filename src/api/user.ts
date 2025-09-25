@@ -1,15 +1,14 @@
-import { post } from "@/http/request";
+import { post } from '../http/request';
 
 export type LoginRequest = {
-  username: string;
-  password: string;
+    username: string;
+    password: string;
 };
 
 export type LoginResponse = {
-  username: string;
-  accessToken: string;
-  roles: string[];
+    username: string;
+    accessToken: string;
+    roles: string[];
 };
 
-export const login = async (data: LoginRequest) =>
-  post<LoginResponse>("/login", data, {});
+export const login = async (data: LoginRequest) => post<LoginResponse>('/login', data, {});
