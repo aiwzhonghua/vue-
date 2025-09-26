@@ -58,6 +58,6 @@ module.exports = {
         'no-constant-condition': 'off',
         'no-unused-vars': 'warn',
         'no-console': 'off',
-        'prettier/prettier': 'off'
+        'prettier/prettier': 'on'
     }
 };

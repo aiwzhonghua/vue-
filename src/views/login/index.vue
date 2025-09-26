@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import { reactive } from 'vue';
 import { User, Lock } from '@element-plus/icons-vue';
+import { useUserStore } from '@/store/user';
+import { useRouter } from 'vue-router';
 
-
+const router = useRouter();
+const userStore = useUserStore();
 const userInfo = reactive({
     username: '',
     password: '',
@@ -17,10 +20,12 @@ const rules = reactive({
     ]
 });
 
-const handleSubmit = () => {
-    // 处理登录逻辑
-    console.log('登录信息:', userInfo);
-};
+function userLogin() {
+    userStore.storeUserLogin(userInfo).then(() => {
+        router.push('/');
+    });
+}
+
 </script>
 
 <template>
@@ -36,17 +41,13 @@ const handleSubmit = () => {
                     <el-input v-model="userInfo.password" type="password" :prefix-icon="Lock" placeholder="请输入密码" />
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" style="width: 100%" @click="handleSubmit">登录</el-button>
+                    <el-button type="primary" style="width: 100%" @click="userLogin">登录</el-button>
                 </el-form-item>
             </el-form>
         </div>
     </div>
 </template>
 <style lang="less" scoped>
-el-form-item__label-wrap {
-    margin-left: 0px !important;
-}
-
 .login-box {
     display: flex;
     justify-content: space-evenly;
@@ -61,12 +62,12 @@ el-form-item__label-wrap {
 
 .login-form {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 400px;
     padding: 20px;
+    width: 400px;
+    text-align: center;
     background-color: #fff;
     border-radius: 5px;
+    flex-direction: column;
 
     .login.info {
         height: max-content;

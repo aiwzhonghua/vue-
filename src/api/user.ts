@@ -11,4 +11,4 @@ export type LoginResponse = {
     roles: string[];
 };
 
-export const login = async (data: LoginRequest) => post<LoginResponse>('/login', data, {});
+export const userLogin = async (data: LoginRequest) => post<LoginResponse>({}, '/login', data);
