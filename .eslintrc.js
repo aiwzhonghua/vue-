@@ -55,6 +55,9 @@ module.exports = {
         'vue/require-v-for-key': 'off',
         'vue/no-textarea-mustache': 'off',
         'vue/no-v-html': 'off',
-        'no-constant-condition': 'off'
+        'no-constant-condition': 'off',
+        'no-unused-vars': 'warn',
+        'no-console': 'off',
+        'prettier/prettier': 'off'
     }
 };
